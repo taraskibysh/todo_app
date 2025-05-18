@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using
 
-namespace todo.DAL.Models
+namespace todo.BLL.Services.Interfaces
 {
-    public enum Status
+    internal interface ITodoItemService
     {
-        Done,
-        InProgress,
-        Todo
-
+        public Task<IEnumerable<TodoItemResponse>>
     }
 }

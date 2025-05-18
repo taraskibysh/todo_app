@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todo.BLL", "..\todo.BAL\tod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todo.DAL", "..\todo.DAL\todo.DAL.csproj", "{2B036FC0-228B-47C4-9DCB-ED2E037539CD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "todo.Contracts", "..\todo.Contracts\todo.Contracts.csproj", "{7DFEA2BB-6A27-46A4-B164-B37C8901C0FE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{2B036FC0-228B-47C4-9DCB-ED2E037539CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B036FC0-228B-47C4-9DCB-ED2E037539CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B036FC0-228B-47C4-9DCB-ED2E037539CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DFEA2BB-6A27-46A4-B164-B37C8901C0FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DFEA2BB-6A27-46A4-B164-B37C8901C0FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DFEA2BB-6A27-46A4-B164-B37C8901C0FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DFEA2BB-6A27-46A4-B164-B37C8901C0FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

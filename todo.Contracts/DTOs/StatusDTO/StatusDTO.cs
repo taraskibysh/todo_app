@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace todo.DAL.Models
+namespace todo.Contracts.DTOs.StatusDTO
 {
-    public enum Status
+    public enum StatusDTO
     {
         Done,
         InProgress,

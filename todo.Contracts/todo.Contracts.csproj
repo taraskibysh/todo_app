@@ -7,11 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Realizations\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\todo.Contracts\todo.Contracts.csproj" />
+    <Folder Include="DTOs\StepDTOs\" />
   </ItemGroup>
 
 </Project>

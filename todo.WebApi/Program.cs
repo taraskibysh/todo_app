@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<TodoContext>(options =>
 {
-    options.UseSqlServer()
-})
+    options.UseSqlServer("server=DESKTOP-Q2PGU9V;Database=todo_db;Trusted_Connection=True;TrustServerCertificate=True;");
+});
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

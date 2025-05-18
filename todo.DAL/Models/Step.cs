@@ -8,8 +8,8 @@ namespace todo.DAL.Models
 {
     public class Step
     {
-        public int Id { get;}
-        public string title { get; set; }
-        public bool isDone { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public bool IsDone { get; set; }
     }
 }

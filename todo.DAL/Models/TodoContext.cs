@@ -1,9 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore
+﻿using Microsoft.EntityFrameworkCore;
 namespace todo.DAL.Models;
 
 public class TodoContext : DbContext
 {
-    public DbSet<Task> Tasks { get; set; }
+    public DbSet<TodoItem> TodoItems { get; set; }
 
     public DbSet<Step> Steps { get; set; }
 
