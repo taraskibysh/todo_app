@@ -3,18 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using todo.DAL.Models;
+using todo.Contracts.DTOs.StepDTOs;
+using todo.Models.Models;
 
 namespace todo.Contracts.DTOs.TodoItemDTOs
 {
-    public class TodoItemResponse
+    public record TodoItemResponse
     {
-        public int Id { get; set; }
+        public int Id { get; init; }
+        public string Title { get; init; }
+        public string? Description { get; init; }
+        public bool IsDone { get; init; }
+        public DateTime? Deadline { get; init; }
+        public Status Status { get; init; }
 
-        public int Title { get; set; }
-
-        public string Description { get; set; }
-
-        public StatusDTO.StatusDTO Status { get; set; }
+        public ICollection<StepResponse> Steps { get; set; }
+        public TodoItemResponse()
+        {
+        }
     }
+
 }

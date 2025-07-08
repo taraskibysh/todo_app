@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using todo.DAL.Models;
+using todo.DAL.DbContexts;
+using todo.Models.Models;
+using todo.Models.Models;
 using todo.DAL.Repositories.Interfaces;
 
 namespace todo.DAL.Repositories.Realizations
 {
-    internal class StepRepository : IStepRepository{
+    public class StepRepository : IStepRepository{
 
         private readonly TodoContext _dbContext;
 
@@ -17,9 +19,9 @@ namespace todo.DAL.Repositories.Realizations
 
             _dbContext = dbContext;
         }
-        public async Task DeleteStep(int id)
+        public async Task DeleteStep( int id)
         {
-            var item = await _dbContext.Steps.FindAsync(id);
+            var item = await _dbContext.Steps.FirstOrDefaultAsync(i => i.Id == id );
             if (item != null)
             {
                 _dbContext.Steps.Remove(item);
@@ -27,14 +29,28 @@ namespace todo.DAL.Repositories.Realizations
             }
         }
 
-        public async Task<IEnumerable<Step>> GetAllSteps()
+        public async Task<IEnumerable<Step>> GetAllSteps(int itemId)
         {
-            return await _dbContext.Steps.ToListAsync();
+            return await _dbContext.Steps.Where(i => i.TodoItem.Id == itemId).ToListAsync();
         }
 
-        public async Task<Step> GetStepById(int id)
+        public async Task<Step?> GetStepById(int itemId, int id)
         {
-            return await _dbContext.Steps.FindAsync(id);
+            return await _dbContext.Steps.FirstOrDefaultAsync(s => s.Id == id && s.TodoItem.Id == itemId);
+        }
+
+        public async Task<Step> AddStep( Step step)
+        {
+
+            
+            var todoItem = _dbContext.TodoItems
+                .Include(t => t.Steps)
+                .FirstOrDefault(t => t.Id == step.TodoItemId);
+
+             var result = _dbContext.Steps.Add(step);
+
+            await _dbContext.SaveChangesAsync();
+            return result.Entity;
         }
     }
 }

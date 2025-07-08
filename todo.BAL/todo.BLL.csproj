@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Services\Realizations\" />
+    <ProjectReference Include="..\todo.Contracts\todo.Contracts.csproj" />
+    <ProjectReference Include="..\todo.DAL\todo.DAL.csproj" />
+    <ProjectReference Include="..\todo.Models\todo.Models.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\todo.Contracts\todo.Contracts.csproj" />
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
   </ItemGroup>
 
 </Project>
